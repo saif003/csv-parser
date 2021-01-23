@@ -32,4 +32,17 @@ function parseFile(sourceFilePath, columns, delimiter, handleError, done, onNewR
   source.pipe(parser);
 }
 
-module.exports = parseFile;
+function splitStringToChunks(str, columnNames, chunkSizes) {
+  if (str) {
+    let chunkStart = 0,
+      chunkEnd = 0;
+    return chunkSizes.reduce((result, length, index) => {
+      chunkStart = chunkEnd;
+      chunkEnd = chunkStart + length;
+      result[columnNames[index].trim()] = str.substring(chunkStart, chunkEnd).trim();
+      return result;
+    }, {});
+  }
+}
+
+module.exports = { parseFile, splitStringToChunks };

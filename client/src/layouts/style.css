@@ -1,0 +1,22 @@
+.userHeader {
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.userHeader .ant-page-header-heading {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(251.23deg, #00C6FB -55.29%, #005BEA 53.66%);
+}
+
+.userHeader .ant-page-header-heading-title a {
+  color: white;
+}
+
+.userHeader .ant-page-header-content {
+  margin-top: 10px;
+  padding: 16px 24px;
+  flex: 1 1 0;
+}

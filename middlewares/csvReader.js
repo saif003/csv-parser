@@ -1,4 +1,4 @@
-const parseFile = require('../helpers/parseFile');
+const { parseFile } = require('../helpers');
 
 module.exports = (filePath, delimiter = ',') => {
   return (req, res, next) => {
@@ -11,7 +11,7 @@ module.exports = (filePath, delimiter = ',') => {
     }
 
     function done(records) {
-      res.send(200, { success: true, records });
+      res.status(200).send({ success: true, records });
     }
 
     var columns = (header) => header.map((column) => column.toLowerCase().replace(' ', '_'));
